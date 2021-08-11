@@ -8,8 +8,9 @@
     "description": "Description of strapi-plugin-coordinates plugin."
   },
   "dependencies": {
-    "leaflet": "^1.7.1",
-    "react-leaflet": "^3.2.1"
+    "leaflet": "1.7.1",
+    "react-leaflet": "3.2.1",
+    "@react-leaflet/core": "1.1.0"
   },
   "author": {
     "name": "Tim Honders",

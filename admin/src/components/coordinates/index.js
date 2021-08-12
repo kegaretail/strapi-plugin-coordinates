@@ -77,8 +77,17 @@ const Coordinates = ({ name, onChange, value, label, autoComplete }) => {
                 />
             </div>
 
+            {
+                latitude !== 0 && longitude !== 0
+                &&
+                <div class="col-12">
+                    <a href={"https://www.google.com/maps/search/?api=1&query=" + latitude + ","+ longitude} target="_BLANK">Bekijk op Google maps</a>
+                </div>
+            }
+
         </div>
     );
 };
 
 export default Coordinates;
+

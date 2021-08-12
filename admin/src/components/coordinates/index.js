@@ -49,7 +49,7 @@ const Coordinates = ({ name, onChange, value, label, autoComplete }) => {
     }
 
     return (
-        <div class="row">
+        <div class="row" style={{paddingBottom: '20px'}}>
 
             <div class="col-12">
                 <Title>{ label }</Title>

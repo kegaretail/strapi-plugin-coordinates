@@ -1,4 +1,4 @@
-# Strapi plugin coordinates input
+# Strapi coordinates input plugin
 
 ## Installation
 

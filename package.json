@@ -1,5 +1,5 @@
 {
-  "name": "strapi-plugin-strapi-plugin-coordinates",
+  "name": "strapi-plugin-coordinates",
   "version": "0.0.2",
   "description": "This is the description of the plugin.",
   "strapi": {

@@ -1,6 +1,6 @@
 import { prefixPluginTranslations } from '@strapi/helper-plugin'
 import pluginId from './pluginId'
-import MultiSelectIcon from './components/MultiSelectIcon'
+import CoordinatesIcon from './components/coordinates/CoordinatesIcon'
 import getTrad from './utils/getTrad'
 
 export default {
@@ -10,7 +10,7 @@ export default {
       name: 'coordinates',
       pluginId: pluginId,
       type: 'json',
-      icon: MultiSelectIcon,
+      icon: CoordinatesIcon,
       intlLabel: {
         id: getTrad('coordinates.label'),
         defaultMessage: 'Coordinates',

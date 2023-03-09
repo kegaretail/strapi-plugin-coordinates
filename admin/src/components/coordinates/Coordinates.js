@@ -41,17 +41,19 @@ const Coordinates = ({
     const [ longitudeError, setLongitudeError ] = useState(false);
 
     useEffect(() => {
-        onChange({
-            target: {
-                name: name,
-                value: JSON.stringify({
-                    latitude: latitude,
-                    longitude: longitude
-                }),
-                type: attribute.type,
-            },
-        })
-    }, [ latitude, longitude ])
+        if (initualValue.latitude !== latitude || initualValue.longitude !== longitude) {
+            onChange({
+                target: {
+                    name: name,
+                    value: JSON.stringify({
+                        latitude: latitude,
+                        longitude: longitude
+                    }),
+                    type: attribute.type,
+                },
+            });
+        }
+    }, [ latitude, longitude, initualValue ]);
 
     return (
         <Grid gap={2}>

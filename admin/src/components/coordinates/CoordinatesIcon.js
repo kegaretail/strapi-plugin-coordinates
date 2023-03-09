@@ -14,7 +14,7 @@ const IconBox = styled(Flex)`
   }
 `
 
-const MultiSelectIcon = () => {
+const CoordinatesIcon = () => {
   return (
     <IconBox
       justifyContent="center"
@@ -28,4 +28,4 @@ const MultiSelectIcon = () => {
   )
 }
 
-export default MultiSelectIcon
+export default CoordinatesIcon;

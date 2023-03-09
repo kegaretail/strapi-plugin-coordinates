@@ -1,29 +1,29 @@
 {
-  "name": "strapi-plugin-coordinates",
-  "version": "0.0.2",
-  "description": "This is the description of the plugin.",
-  "strapi": {
     "name": "strapi-plugin-coordinates",
-    "icon": "plug",
-    "description": "Description of strapi-plugin-coordinates plugin."
-  },
-  "dependencies": {
-  },
-  "author": {
-    "name": "Tim Honders",
-    "email": "",
-    "url": ""
-  },
-  "maintainers": [
-    {
-      "name": "Tim Honders",
-      "email": "",
-      "url": ""
+    "description": "",
+    "keywords": [
+        "strapi",
+        "strapi-plugin",
+        "custom-fields"
+    ],
+    "version": "1.1.0",
+    "strapi": {
+        "name": "coordinates",
+        "description": "",
+        "kind": "plugin",
+        "displayName": "Coordinates"
+    },
+    "author": {
+        "name": "Tim",
+        "email": "tim@kega.nl",
+        "url": ""
+    },
+    "license": "MIT",
+    "peerDependencies": {
+        "@strapi/strapi": "^4.4.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
     }
-  ],
-  "engines": {
-    "node": ">=10.16.0 <=14.x.x",
-    "npm": ">=6.0.0"
-  },
-  "license": "MIT"
 }

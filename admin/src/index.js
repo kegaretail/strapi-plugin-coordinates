@@ -1,28 +1,58 @@
+import { prefixPluginTranslations } from '@strapi/helper-plugin'
+import pluginId from './pluginId'
+import MultiSelectIcon from './components/MultiSelectIcon'
+import getTrad from './utils/getTrad'
 
-import Coordinates from './components/coordinates/index';
+export default {
+  register(app) {
 
-export default (strapi) => {
+    app.customFields.register({
+      name: 'coordinates',
+      pluginId: pluginId,
+      type: 'json',
+      icon: MultiSelectIcon,
+      intlLabel: {
+        id: getTrad('coordinates.label'),
+        defaultMessage: 'Coordinates',
+      },
+      intlDescription: {
+        id: getTrad('coordinates.description'),
+        defaultMessage: 'Inser coordinates',
+      },
+      components: {
+        Input: async () => import('./components/coordinates/Coordinates'),
+      },
+      options: {
+        base: [],
+        advanced: []
+      },
+    })
 
-  const plugin = {
-    title: 'Coordinates',
-    blockerComponent: null,
-    blockerComponentProps: {},
-    description: 'Coordinates description',
-    icon: 'plug',
-    id: 'coordinates',
-    initializer: () => null,
-    injectedComponents: [],
-    isReady: true,
-    leftMenuLinks: [],
-    leftMenuSections: [],
-    mainComponent: null,
-    name: 'Coordinates',
-    preventComponentRendering: false,
-    trads: {},
-    autoComplete: 'off'
-  };
+  },
 
-  strapi.registerField({ type: 'coordinates', Component: Coordinates });
-
-  return strapi.registerPlugin(plugin);
-};
+  async registerTrads({ locales }) {
+    const importedTrads = await Promise.all(
+      locales.map((locale) => {
+        return Promise.all([import(`./translations/${locale}.json`)])
+          .then(([pluginTranslations]) => {
+            return {
+              data: {
+                ...prefixPluginTranslations(
+                  pluginTranslations.default,
+                  pluginId,
+                ),
+              },
+              locale,
+            }
+          })
+          .catch(() => {
+            return {
+              data: {},
+              locale,
+            }
+          })
+      }),
+    )
+    return Promise.resolve(importedTrads)
+  },
+}
